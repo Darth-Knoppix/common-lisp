@@ -16,15 +16,18 @@
 (def-suite socks-and-sexprs-suite)
 (in-suite socks-and-sexprs-suite)
 
-(test symbols "Lenny's favorite food is a non-null symbol"
+(test symbols
+  "Lenny's favorite food is a non-null symbol"
   (is-true (symbolp (lennys-favorite-food)))
   (is-false (null (lennys-favorite-food)))
   (is-false (keywordp (lennys-favorite-food))))
 
-(test keywords "Lenny's secret keyword is a keyword"
+(test keywords
+  "Lenny's secret keyword is a keyword"
   (is-true (keywordp (lennys-secret-keyword))))
 
-(test atoms "Lenny can recognise atoms"
+(test atoms
+  "Lenny can recognise atoms"
   (is-true (is-an-atom-p 5))
   (is-true (is-an-atom-p 5.5))
   (is-true (is-an-atom-p 'a))
@@ -39,7 +42,8 @@
   (is-false (is-an-atom-p (list 1 2 3)))
   (is-false (is-an-atom-p (cons 'a 'b))))
 
-(test conses "Lenny can recognise conses"
+(test conses
+  "Lenny can recognise conses"
   (is-true (is-a-cons-p '(a . b)))
   (is-true (is-a-cons-p (cons 'a 'b)))
   (is-true (is-a-cons-p (list 1 2 3)))
@@ -53,11 +57,13 @@
   (is-false (is-a-cons-p #'consp))
   (is-false (is-a-cons-p nil)))
 
-(test first "Lenny can get the first item of a cons"
+(test first
+  "Lenny can get the first item of a cons"
   (is (equal 'a (first-thing (cons 'a 'b))))
   (is (equal 'a (first-thing (list 'a 'b)))))
 
-(test rest "Lenny can get the rest of a cons"
+(test rest
+  "Lenny can get the rest of a cons"
   (is (equal 'b (rest-of-it (cons 'a 'b))))
   (is (equal '(b) (rest-of-it (cons 'a (cons 'b nil)))))
   (is (equal '(b) (rest-of-it (list 'a 'b))))
