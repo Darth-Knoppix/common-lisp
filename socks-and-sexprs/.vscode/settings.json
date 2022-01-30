@@ -1,0 +1,12 @@
+{
+  "alive.swank.startupCommand": [
+    "ros",
+    "run",
+    "--eval",
+    "(require :asdf)",
+    "--eval",
+    "(asdf:load-system :swank)",
+    "--eval",
+    "(swank:create-server)"
+  ]
+}
