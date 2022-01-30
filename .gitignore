@@ -1,1 +1,3 @@
 */.exercism
+*.fasl
+*/.vscode/alive
